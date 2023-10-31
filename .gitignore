@@ -1,0 +1,7 @@
+
+# Ignore the vendor directory
+/vendor
+
+# Ignore Node.js dependencies
+/node_modules
+

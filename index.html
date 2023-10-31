@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Custom Template</title>
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/tippy.js@6/animations/scale.css" />
+        <style>
+  
+    </style>
+    </head>
+
+    <body>
+        <div class="tooltip-container">
+            <h2>lorem</h2>
+            <div class="tooltip-content">
+                <span class="tippy-close">×</span>
+                <p>Eight questionnaires covering lifestyles, personal
+                    preferences, and existing interiors
+                    are aimed at painting a comprehensive picture of your needs
+                    and tastes.</p>
+            </div>
+        </div>
+
+        <script src="https://unpkg.com/@popperjs/core@2"></script>
+        <script src="https://unpkg.com/tippy.js@6"></script>
+        <script>
+       document.addEventListener("DOMContentLoaded", function () {
+    const tooltipContainers = document.querySelectorAll(".tooltip-container");
+
+    tooltipContainers.forEach(function (container) {
+        const tooltipContent = container.querySelector(".tooltip-content");
+        const closeButton = tooltipContent.querySelector(".tippy-close");
+
+        tippy(container, {
+            content: tooltipContent,
+            interactive: true,
+            trigger: "click",
+            placement: "bottom",
+            onShow(instance) {
+                closeButton.addEventListener("click", () => {
+                    instance.hide();
+                });
+            }
+
+        });
+
+
+
+    });
+});
+    </script>
+    </body>
+
+</html>
